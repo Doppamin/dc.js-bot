@@ -1,4 +1,6 @@
-const { token } = require("./config.json");
+// const { token } = require("./config.json");
+
+require("dotenv").config();
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -35,4 +37,4 @@ client.on("message", (msg) => {
 // 313284967214088196 myID
 // 758459168155238412 Yunus's ID
 
-client.login(token);
+client.login(process.env.TOKEN);
