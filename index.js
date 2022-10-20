@@ -34,7 +34,14 @@ client.on("message", (msg) => {
   }
 });
 
+client.on("message", (msg) => {
+  if (msg.author.id == "142734522297876480") {
+    msg.reply("Halil boş yapma.");
+  }
+});
+
 // 313284967214088196 myID
 // 758459168155238412 Yunus's ID
+// 142734522297876480 Halil's ID
 
 client.login(process.env.TOKEN);
