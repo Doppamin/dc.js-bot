@@ -21,8 +21,9 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
   if (msg.author.id == "758459168155238412") {
-    msg.react("🤡");
-    msg.reply("Yazdi yine tipini sevdiğim");
+    // msg.react("🤡");
+    // msg.reply("Yazdi yine tipini sevdiğim");
+    msg.delete();
   }
 });
 client.on("message", (msg) => {
