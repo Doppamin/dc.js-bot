@@ -24,10 +24,10 @@ client.on("message", (msg) => {
     msg.reply("Yazdi yine tipini sevdiğim.");
     // msg.delete();
   }
-  if (msg.author.id == "313284967214088196") {
+  else if (msg.author.id == "313284967214088196") {
     msg.react("💯");
   }
-  if (msg.author.id == "142734522297876480") {
+  else if (msg.author.id == "142734522297876480") {
     msg.reply("Halil boş yapma.");
   }
 });
