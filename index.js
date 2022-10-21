@@ -5,6 +5,14 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+const greetingList = [
+  "sa",
+  "sea",
+  "selam",
+  "selamun aleyküm",
+  "selamunaleyküm",
+];
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -20,6 +28,14 @@ client.on("message", (msg) => {
   }
   if (msg.author.id == "142734522297876480") {
     msg.reply("Halil boş yapma.");
+  }
+});
+client.on("message", (msg) => {
+  if (
+    // if msg.content is in the greetingList array
+    greetingList.includes(msg.content.toLowerCase())
+  ) {
+    msg.reply("Aleyküm selam.");
   }
 });
 
