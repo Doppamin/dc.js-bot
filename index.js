@@ -18,16 +18,13 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  msg.reply(msg.content);
   if (msg.author.id == "758459168155238412") {
     msg.react("🤡");
     msg.reply("Yazdi yine tipini sevdiğim.");
     // msg.delete();
-  }
-  else if (msg.author.id == "313284967214088196") {
+  } else if (msg.author.id == "313284967214088196") {
     msg.react("💯");
-  }
-  else if (msg.author.id == "142734522297876480") {
+  } else if (msg.author.id == "142734522297876480") {
     msg.reply("Halil boş yapma.");
   }
 });
