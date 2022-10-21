@@ -30,6 +30,9 @@ client.on("message", (msg) => {
     msg.reply("Halil boş yapma.");
   }
 });
+client.on("react", (react) => {
+  react.reply("AYNEN KANKA AÇIK BULDUN");
+});
 client.on("message", (msg) => {
   if (
     // if msg.content is in the greetingList array
