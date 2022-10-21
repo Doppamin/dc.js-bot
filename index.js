@@ -18,6 +18,7 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
+  msg.reply(msg.content);
   if (msg.author.id == "758459168155238412") {
     msg.react("🤡");
     msg.reply("Yazdi yine tipini sevdiğim.");
@@ -29,9 +30,6 @@ client.on("message", (msg) => {
   if (msg.author.id == "142734522297876480") {
     msg.reply("Halil boş yapma.");
   }
-});
-client.on("message", (msg) => {
-  msg.reply(msg);
 });
 client.on("message", (msg) => {
   if (
