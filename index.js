@@ -18,14 +18,16 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  if (msg.author.id == "758459168155238412") {
-    msg.react("🤡");
-    msg.reply("Yazdi yine tipini sevdiğim.");
-    // msg.delete();
-  } else if (msg.author.id == "313284967214088196") {
-    msg.react("💯");
-  } else if (msg.author.id == "142734522297876480") {
-    msg.reply("Halil boş yapma.");
+  if (msg.channel.id == "1032731884981072003") {
+    if (msg.author.id == "758459168155238412") {
+      msg.react("🤡");
+      msg.reply("Yazdi yine tipini sevdiğim.");
+      // msg.delete();
+    } else if (msg.author.id == "313284967214088196") {
+      msg.react("💯");
+    } else if (msg.author.id == "142734522297876480") {
+      msg.reply("Halil boş yapma.");
+    }
   }
 });
 client.on("message", (msg) => {
