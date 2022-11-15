@@ -2,6 +2,9 @@
 
 require("dotenv").config();
 
+const fs = require("fs");
+const path = require("path");
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -13,11 +16,11 @@ const greetingList = [
   "selamunaleyküm",
 ];
 
-const blacklist = fs.readFileSync(
+const blacklistFile = fs.readFileSync(
   path.join(__dirname, "blacklist.txt"),
   "utf-8"
 );
-blacklist = blacklist.split("\n");
+const blacklist = blacklistFile.split("\n");
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
