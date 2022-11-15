@@ -8,6 +8,8 @@ const path = require("path");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+var myID = "313284967214088196";
+
 const greetingList = [
   "sa",
   "sea",
@@ -34,7 +36,7 @@ client.on("message", (msg) => {
   if (blacklist.some((word) => msg.content.toLowerCase().includes(word))) {
     msg.delete();
   }
-  if (msg.author.id == "313284967214088196") {
+  if (msg.author.id == myID) {
     msg.react("💯");
   }
 });
@@ -42,17 +44,13 @@ client.on("message", (msg) => {
 // 758459168155238412 Yunus's ID
 // 142734522297876480 Halil's ID
 
-var myID = "313284967214088196";
-
-const channel = client.channels.cache.get("1042119132293902466");
-if (channel) {
-  client.on("message", (msg) => {
-    if (msg.author.id == myID) {
-      if (msg.content == "Hello There") {
-        msg.reply("General Kenobi");
-      }
+client.on("message", (msg) => {
+  //if (msg.author.id == myID)
+  if (msg.channel.id == "1042119132293902466") {
+    if (msg.content.toUpperCase() == "HELLO THERE") {
+      msg.reply("General Kenobi!");
     }
-  });
-}
+  }
+});
 
 client.login(process.env.TOKEN);
