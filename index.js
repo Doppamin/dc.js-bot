@@ -44,4 +44,15 @@ client.on("message", (msg) => {
 
 var myID = "313284967214088196";
 
+const channel = client.channels.cache.get("1042119132293902466");
+if (channel) {
+  client.on("message", (msg) => {
+    if (msg.author.id == myID) {
+      if (msg.content == "Hello There") {
+        channel.send("General Kenobi");
+      }
+    }
+  });
+}
+
 client.login(process.env.TOKEN);
