@@ -49,7 +49,7 @@ if (channel) {
   client.on("message", (msg) => {
     if (msg.author.id == myID) {
       if (msg.content == "Hello There") {
-        channel.send("General Kenobi");
+        msg.reply("General Kenobi");
       }
     }
   });
