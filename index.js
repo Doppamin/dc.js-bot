@@ -26,22 +26,16 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-// client.on("message", (msg) => {
-//   if (msg.author.id == "313284967214088196") {
-//     msg.react("💯");
-//   }
-// });
-
-// client.on("message", (msg) => {
-//   if (greetingList.includes(msg.content.toLowerCase())) {
-//     msg.reply("Aleyküm selam.");
-//   }
-// });
-
 client.on("message", (msg) => {
   // if msg contains any blacklist word
+  if (greetingList.includes(msg.content.toLowerCase())) {
+    msg.reply("Aleyküm selam.");
+  }
   if (blacklist.some((word) => msg.content.toLowerCase().includes(word))) {
     msg.delete();
+  }
+  if (msg.author.id == "313284967214088196") {
+    msg.react("💯");
   }
 });
 
