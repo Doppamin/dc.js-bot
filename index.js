@@ -13,29 +13,28 @@ const greetingList = [
   "selamunaleyküm",
 ];
 
+const blacklist = fs.readFileSync(
+  path.join(__dirname, "blacklist.txt"),
+  "utf-8"
+);
+blacklist = blacklist.split("\n");
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on("message", (msg) => {
-  if (msg.channel.id == "1032731884981072003") {
-    if (msg.author.id == "758459168155238412") {
-      msg.react("🤡");
-      msg.reply("Yazdi yine tipini sevdiğim.");
-      // msg.delete();
-    } else if (msg.author.id == "313284967214088196") {
-      msg.react("💯");
-    } else if (msg.author.id == "142734522297876480") {
-      msg.reply("Halil boş yapma.");
-    }
+  if (msg.author.id == "313284967214088196") {
+    msg.react("💯");
   }
 });
+
 client.on("message", (msg) => {
-  if (
-    // if msg.content is in the greetingList array
-    greetingList.includes(msg.content.toLowerCase())
-  ) {
+  if (greetingList.includes(msg.content.toLowerCase())) {
     msg.reply("Aleyküm selam.");
+  }
+  if (blacklist.includesmsg.content.toLowerCase()) {
+    msg.delete();
   }
 });
 
