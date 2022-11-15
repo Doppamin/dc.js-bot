@@ -1,14 +1,14 @@
 {
   "name": "dc-bot",
   "version": "0.0.2",
-  "description": "",
+  "description": "small size discord bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "devStart": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "mtcnbzks",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.3",
