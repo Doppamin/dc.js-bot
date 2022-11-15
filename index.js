@@ -39,8 +39,9 @@ client.on("message", (msg) => {
   }
 });
 
-// 313284967214088196 myID
 // 758459168155238412 Yunus's ID
 // 142734522297876480 Halil's ID
+
+var myID = "313284967214088196";
 
 client.login(process.env.TOKEN);
