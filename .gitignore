@@ -2,6 +2,5 @@ config.json
 node_modules
 .idea
 .env
-blacklist.txt
 test.js
 .DS_Store
