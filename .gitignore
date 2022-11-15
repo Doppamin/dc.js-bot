@@ -1,6 +1,6 @@
-config.json
-node_modules
 .idea
-.env
-test.js
 .DS_Store
+node_modules
+.env
+config.json
+test.js
