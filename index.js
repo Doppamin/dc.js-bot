@@ -8,49 +8,49 @@ const path = require("path");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-var myID = "313284967214088196";
+const myID = "313284967214088196";
 
 const greetingList = [
-  "sa",
-  "sea",
-  "selam",
-  "selamun aleyküm",
-  "selamunaleyküm",
+    "sa",
+    "sea",
+    "selam",
+    "selamun aleyküm",
+    "selamunaleyküm",
 ];
 
 const blacklistFile = fs.readFileSync(
-  path.join(__dirname, "blacklist.txt"),
-  "utf-8"
+    path.join(__dirname, "blacklist.txt"),
+    "utf-8"
 );
 const blacklist = blacklistFile.split("\n");
 
 client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on("message", (msg) => {
-  // if msg contains any blacklist word
-  if (greetingList.includes(msg.content.toLowerCase())) {
-    msg.reply("Aleyküm selam.");
-  }
-  if (blacklist.some((word) => msg.content.toLowerCase().includes(word))) {
-    msg.delete();
-  }
-  if (msg.author.id == myID) {
-    msg.react("💯");
-  }
+    // if msg contains any blacklist word
+    if (greetingList.includes(msg.content.toLowerCase())) {
+        msg.reply("Aleyküm selam.");
+    }
+    if (blacklist.some((word) => msg.content.toLowerCase().includes(word))) {
+        msg.delete();
+    }
+    if (msg.author.id === myID) {
+        msg.react("💯");
+    }
 });
 
 // 758459168155238412 Yunus's ID
 // 142734522297876480 Halil's ID
 
 client.on("message", (msg) => {
-  //if (msg.author.id == myID)
-  if (msg.channel.id == "1042119132293902466") {
-    if (msg.content.toUpperCase() == "HELLO THERE") {
-      msg.reply("General Kenobi!");
+    //if (msg.author.id == myID)
+    if (msg.channel.id === "1042119132293902466") {
+        if (msg.content.toUpperCase() === "HELLO THERE") {
+            msg.reply("General Kenobi!");
+        }
     }
-  }
 });
 
 client.login(process.env.TOKEN);
