@@ -6,3 +6,4 @@ config.json
 test.js
 package-lock.json
 package.json
+.gitignore
