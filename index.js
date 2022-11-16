@@ -10,6 +10,12 @@ const client = new Discord.Client();
 
 const myID = "313284967214088196";
 
+function attachIsImage(msgAttach) {
+    let url = msgAttach.url;
+    //True if this url is a png image.
+    return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
+}
+
 const greetingList = [
     "sa",
     "sea",
@@ -51,7 +57,9 @@ client.on("message", (msg) => {
             msg.reply("General Kenobi!");
         }
         if (msg.attachment.size > 0) {
-            msg.reply("Photo detected.");
+            if (msg.attachments.every(attachIsImage)) {
+                msg.reply("Photo detected.");
+            }
         }
     }
 });
