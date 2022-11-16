@@ -1,5 +1,4 @@
 // const { token } = require("./config.json");
-
 require("dotenv").config();
 
 const fs = require("fs");
@@ -10,7 +9,7 @@ const client = new Discord.Client();
 
 const myID = "313284967214088196";
 
-function attachIsImage(msgAttach) {
+function isAttachImage(msgAttach) {
     let url = msgAttach.url;
     //True if this url is a png image.
     return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
@@ -47,9 +46,6 @@ client.on("message", (msg) => {
     }
 });
 
-// 758459168155238412 Yunus's ID
-// 142734522297876480 Halil's ID
-
 client.on("message", (msg) => {
     //if (msg.author.id == myID)
     if (msg.channel.id === "1042119132293902466") {
@@ -57,7 +53,7 @@ client.on("message", (msg) => {
             msg.reply("General Kenobi!");
         }
         if (msg.attachments.size > 0) {
-            if (msg.attachments.every(attachIsImage)) {
+            if (msg.attachments.every(isAttachImage)) {
                 msg.reply("Photo detected.");
             }
         }
