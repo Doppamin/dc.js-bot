@@ -56,7 +56,7 @@ client.on("message", (msg) => {
         if (msg.content.toUpperCase() === "HELLO THERE") {
             msg.reply("General Kenobi!");
         }
-        if (msg.attachment.size > 0) {
+        if (msg.attachments.size > 0) {
             if (msg.attachments.every(attachIsImage)) {
                 msg.reply("Photo detected.");
             }
