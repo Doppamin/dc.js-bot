@@ -1,4 +1,4 @@
-const { token } = require("./config.json"); 
+const { token } = require("./config.json");
 
 const fs = require("fs");
 const path = require("path");
@@ -10,7 +10,7 @@ const myID = "313284967214088196";
 
 function isAttachImage(msgAttach) {
   let url = msgAttach.url;
-  //True if this url is a png image.
+  // True if this url is a png image.
   return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
 }
 
